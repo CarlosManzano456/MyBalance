@@ -1,0 +1,487 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo{
+  width: 40px;
+  height: 40px;
+
+
+}
+
+body {
+  background-color: #f4f7fa; /* Color de fondo gris muy suave */
+}
+
+/* Contenedor principal que divide la pantalla en dos */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- ESTILOS DEL SIDEBAR --- */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eaeaea;
+}
+
+.sidebar-logo h2 {
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  font-size: 26px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por los enlaces */
+.sidebar-nav a:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+/* Empuja el perfil de usuario hacia abajo del todo */
+.sidebar-footer {
+  margin-top: auto; 
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+/* --- ESTILOS DEL CONTENIDO PRINCIPAL --- */
+.main-content {
+  flex: 1; /* Toma todo el espacio restante a la derecha */
+  padding: 40px;
+}
+
+
+/* --- ESTILOS DE LA VISTA RESUMEN --- */
+.header-resumen {
+  margin-bottom: 30px;
+}
+
+.header-resumen h1 {
+  font-size: 28px;
+  color: #111827;
+}
+
+.header-resumen p {
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.tarjeta-balance-total {
+  background-color: #111827; /* Azul muy oscuro/Negro */
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.tarjeta-balance-total h3 {
+  font-weight: 400;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.tarjeta-balance-total h2 {
+  font-size: 36px;
+}
+
+/* Grid para poner las dos tarjetas de abajo lado a lado */
+.grid-resumen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.tarjeta-modulo {
+  background-color: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-modulo h3 {
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+.lista-sencilla {
+  list-style: none;
+}
+
+.item-lista {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.item-meta {
+  margin-bottom: 15px;
+}
+
+.meta-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Estilo para la barra de progreso */
+progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+}
+progress::-webkit-progress-bar {
+  background-color: #f3f4f6;
+  border-radius: 10px;
+}
+progress::-webkit-progress-value {
+  background-color: #3b82f6; /* Azul */
+  border-radius: 10px;
+}
+
+/* --- ESTILOS VISTA TRANSACCIONES --- */
+.grid-transacciones {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* El formulario ocupa 1/3, la tabla 2/3 */
+  gap: 20px;
+}
+
+.form-container {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.campo-form {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fila-form {
+  display: flex;
+  gap: 15px;
+}
+
+.fila-form .campo-form {
+  flex: 1;
+}
+
+.campo-form label {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.campo-form input,
+.campo-form select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+  border-color: #3b82f6;
+}
+
+.btn-guardar {
+  width: 100%;
+  background-color: #111827;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-guardar:hover {
+  background-color: #374151;
+}
+
+/* Estilos de la tabla */
+.tabla-responsive {
+  overflow-x: auto;
+}
+
+.tabla-transacciones {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabla-transacciones th,
+.tabla-transacciones td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabla-transacciones th {
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.badge-categoria {
+  background-color: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+/* --- ESTILOS VISTA METAS --- */
+.grid-tarjetas-metas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  align-content: start;
+}
+
+.tarjeta-meta-detalle {
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+}
+
+.meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.meta-header h4 {
+  color: #1f2937;
+  font-size: 18px;
+}
+
+.porcentaje {
+  font-weight: bold;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Barra de progreso personalizada */
+.barra-fondo {
+  width: 100%;
+  height: 10px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.barra-progreso {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.meta-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.meta-footer strong {
+  color: #111827;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container .tarjeta-modulo {
+  width: 400px;
+}
+.btn-logout {
+  background: none;
+  border: 1px solid #fee2e2;
+  color: #ef4444;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.btn-logout:hover { background-color: #fef2f2; }
+
+.modal-overlay {
+  position: fixed; 
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  z-index: 9999; /* Asegura que se superponga a todo */
+}
+
+.modal-content {
+  background: white; 
+  padding: 30px; 
+  border-radius: 16px;
+  width: 550px; 
+  max-width: 92%; 
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-body-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Contenedor genérico para headers con botones alineados */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-cerrar-modal {
+  position: absolute; top: 15px; right: 15px;
+  background: none; border: none; font-size: 24px; cursor: pointer;
+  color: #6b7280;
+}
+
+.btn-cerrar-modal:hover { color: #111827; }
+
+.acciones-tarjeta {
+  display: flex; gap: 10px; margin-top: 15px;
+}
+
+.btn-accion {
+  flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;
+  cursor: pointer; font-size: 13px; font-weight: 500; transition: 0.2s;
+}
+
+.btn-eliminar { color: #ef4444; background: white; }
+.btn-eliminar:hover { background-color: #fef2f2; }
+
+.btn-ahorrar { background-color: #3b82f6; color: white; border: none; }
+.btn-ahorrar:hover { background-color: #2563eb; }
+
+.formula-ayuda {
+  background: #f8fafc; padding: 15px; border-radius: 8px;
+  text-align: center; margin: 15px 0; font-family: monospace; font-size: 18px;
+  border: 1px dashed #3b82f6;
+  color: #1f2937;
+}
+
+
+.scrollable{
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  /* El contenedor pasa de estar lado a lado a apilarse verticalmente */
+  .app-container {
+    flex-direction: column;
+  }
+
+  /* El sidebar se transforma en un menú superior */
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .sidebar-logo h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .sidebar-nav li {
+    margin-bottom: 0;
+  }
+
+  .sidebar-nav a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .sidebar-footer {
+    display: none; /* Ocultamos el usuario en móvil para ahorrar espacio crítico */
+  }
+
+  /* Ajustes del contenido principal */
+  .main-content {
+    padding: 20px;
+  }
+
+  /* Las cuadrículas adaptan sus columnas a una sola fila por elemento */
+  .grid-resumen, 
+  .grid-transacciones {
+    grid-template-columns: 1fr;
+  }
+
+  /* Los encabezados se apilan en vertical */
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-flex button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
