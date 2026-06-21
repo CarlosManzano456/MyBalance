@@ -20,7 +20,7 @@ const Login = () => {
   useEffect(() => {
     const buscarImagenesUnsplash = async () => {
       // Reemplaza esto con tu ACCESS_KEY real
-      const ACCESS_KEY = 'GvkODl09ljNcZtMIR49rQd6ZbeqN0uesj1-x6Lyr5Yk'; 
+      const ACCESS_KEY = 'poyo'; 
       const searchQuery = 'finance'; 
       const url = `https://api.unsplash.com/search/photos?query=${searchQuery}&client_id=${ACCESS_KEY}`;
 
